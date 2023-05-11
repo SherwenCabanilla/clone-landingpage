@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabanilla, Sherwen C. BSIT-1H</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+
+        .sh-nav {
+            background-color: #1f1f1f;
+            color: white;
+        }
+
+
+        .sh-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .sh-nav li {
+            margin: 0 10px;
+        }
+
+        .sh-nav a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sh-dropdown ul {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .sh-dropdown:hover>ul {
+            display: flex;
+            flex-direction: column;
+            background-color: #1f1f1f;
+        }
+
+        .sh-dropdown:hover>a {
+            background-color: #1f1f1f;
+        }
+
+        .sh-search {
+            height: 25px;
+        }
+
+        .sh-dropdown ul li {
+            margin: 0;
+        }
+
+        .sh-dropdown ul li a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sh-midnav {
+            height: 150px;
+            background-color: #f27d30;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: rgba(243, 243, 243, 0.894);
+        }
+
+        .sh-tit {
+            border-bottom: 1px solid;
+            width: 45%;
+        }
+
+        .sh-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .sh-logo {
+            width: 300px;
+            height: 300px;
+        }
+
+        .sh-img {
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        .sh-tittle {
+            margin: 0;
+        }
+
+        .haha {
+            background-color: #060f4d;
+            color: white;
+        }
+
+        .sh-lastnav:hover>ul {
+            display: flex;
+            flex-direction: column;
+            background-color: #060f4d;
+        }
+
+        .sh-lastnav:hover>a {
+            background-color: #060f4d;
+        }
+
+        li {
+            border-left: 1px solid grey;
+            padding-left: 20px;
+        }
+
+
+
+        .sh-container {
+            display: flex;
+            margin-left: 30px;
+        }
+
+        .sh-container h4 {
+            margin: 30px;
+            margin-bottom: 3px;
+        }
+
+        .sh-login {
+            color: #060f4d;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #060f4d;
+        }
+
+        .sh-reqpass {
+            color: #060f4d9e;
+        }
+
+        .sh-reqpassa {
+            text-decoration: none;
+        }
+
+        .sh-reqpass:hover {
+            color: #f27d30;
+        }
+
+        .sh-userAccount {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            color: #060f4d;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 40%;
+            justify-content: space-around;
+        }
+
+        label {
+            margin-left: 10px;
+        }
+
+        input {
+            width: 100%;
+            height: 10%;
+            margin: 0 auto;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            border: #1414146e 1px inset;
+        }
+
+        p {
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sh-btnlogin {
+            width: 12%;
+            padding: 10px;
+            background-color: #060f4d;
+            color: white;
+            border-radius: 10%;
+        }
+
+        .sh-btnlogin:hover {
+            background-color: orangered;
+        }
+
+
+        .sh-transparent {
+            margin: 0px;
+            margin-top: 0px;
+            width: 100%;
+            background: linear-gradient(rgba(55, 53, 53, 0.787), white);
+        }
+
+        #sh-footer {
+            background-image: url(dpwh.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+
+        }
+
+        #sh-content {
+            height: 600px;
+            background: linear-gradient(rgba(239, 211, 211, 0.024), rgba(255, 255, 255, 0));
+        }
+
+        .sh-tit-footer {
+            border: none;
+        }
+
+        .sh-midnav-footer {
+            color: #060f4d;
+            background-color: rgba(250, 235, 215, 0);
+        }
+
+        #sh,
+        a {
+            color: #060f4d;
+            text-decoration: none;
+            border: none;
+            list-style: none;
+        }
+
+        .sh-last {
+            display: flex;
+            margin: 20px;
+            text-decoration: none;
+        }
+
+        #sh-footer-content li {
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .contact {
+            color: orangered;
+        }
+
+
+        .sh-logo {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .sh-logo-con {
+            max-width: 50px;
+        }
+
+        .sh-img {
+            padding-left: 20px;
+            margin-left: 40px;
+        }
+
+        .sh-logo-con:hover {
+            background-color: #3c4cc7;
+            transform: 400ms ease;
+            border-radius: 50%;
+        }
+
+        .logo {
+            width: 80%;
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 924px) {
+            .sh-nav ul {
+                flex-direction: column;
+            }
+
+            .sh-img {
+                margin-left: 0px;
+
+            }
+
+            .sh-nav li {
+                margin: 10px 0;
+            }
+
+            .sh-midnav {
+                height: auto;
+            }
+
+            .sh-tit {
+                width: 100%;
+            }
+
+            .container {
+                height: 60vh;
+            }
+
+            form {
+                height: 50%;
+            }
+
+            input {
+                font-size: 14px;
+            }
+
+            p {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .sh-btnlogin {
+                width: 20%;
+            }
+
+            #sh-footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .sh-tit-footer {
+                text-align: center;
+            }
+
+            .sh-midnav-footer {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            #sh-footer-content li {
+                margin-top: 5px;
+                font-size: 14px;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            #sh-footer-content {
+                margin-top: 20px;
+                font-size: 14px;
+            }
+
+            .sh-last {
+                display: inline;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .sh-search {
+                width: 50%;
+            }
+        }
+
+
+        .lastt {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="hidden" name="birthdate" value="924 (September, 24)">
+    <!-- REFERENCE LANDING PAGE -->
+    <input type="hidden" value="https://www.dpwh.gov.ph/dpwh/user">
+
+
+    <nav class="sh-tophead">
+        <div class="sh-nav">
+            <ul>
+                <li><a href="">
+                        <h1>GOVPH</h1>
+                    </a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Transparency</a></li>
+                <li class="sh-dropdown">
+                    <a href="#">Projects &#x21e9;
+                    </a>
+                    <ul>
+                        <li><a href="#">Infrastructure</a></li>
+                        <li><a href="#">Infra Statistics</a></li>
+                        <li><a href="#">GIS Web Applications</a></li>
+                        <li><a href="#">Public-Private Partnership </a></li>
+                    </ul>
+                </li>
+                <li class="sh-dropdown">
+                    <a href="#">Contact Us &#x21e9;
+                    </a>
+                    <ul>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Directory</a></li>
+                    </ul>
+                </li>
+                <li class="sh-dropdown">
+                    <a href="#">Government Links
+                    </a>
+                </li>
+                <li class="sh-dropdown">
+                    <a href=""><input type="text" name="" id="" placeholder="Search..." class="sh-search"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="sh-midnav">
+        <div class="sh-header">
+            <div class="sh-img">
+                <img src="logodp.png" alt="" class="sh-dpwp-logo sh-logo">
+            </div>
+            <div class="sh-tittle">
+                <div class="sh-tit">
+                    <h4>REPUBLIC OF THE PHILIPPINES</h4>
+                </div>
+                <h3>DEPARTMENT OF PUBLIC WORKS AND HIGHWAYS</h3>
+                <h4><i>RIGHT PROJECT, RIGHT COST, RIGHT QUALITY, RIGHT ON TIME, RIGHT PEOPLE</i></h4>
+            </div>
+        </div>
+    </nav>
+    <nav class="sh-tophead">
+        <div class="sh-nav haha">
+            <ul>
+                <li class="sh-dropdown sh-lastnav">
+                    <a href="#">About &#x21e9;
+                    </a>
+                    <ul>
+                        <li><a href="#">About DPWH</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Former Secretaries</a></li>
+                        <li><a href="#">About the logo </a></li>
+                        <li><a href="#">Annual Budgets </a></li>
+                        <li><a href="#">Organizational Chart </a></li>
+                        <li><a href="#">Workforce Complement </a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Announcement</a></li>
+                <li><a href="#">News</a></li>
+                <li class="sh-dropdown sh-lastnav">
+                    <a href="#">Careers &#x21e9;
+                    </a>
+                    <ul>
+                        <li><a href="#">Vacancies</a></li>
+                        <li><a href="#">How to Apply</a></li>
+                    </ul>
+                </li>
+                <li class="sh-dropdown sh-lastnav">
+                    <a href="#">Reference &#x21e9;
+                    </a>
+                    <ul>
+                        <li><a href="#">DPWH Atlas</a></li>
+                        <li><a href="#">Road and Bridge Inventory</a></li>
+                        <li><a href="#">SteaMS</a></li>
+                        <li><a href="#">Laws, Codes, Orders</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sh-container">
+        <h4 class="sh-login">Log in</h4>
+        <a href="" class="sh-reqpassa">
+            <h4 class="sh-reqpass">Request new Password</h4>
+        </a>
+    </div>
+    <hr>
+
+    <div class="sh-userAccount">
+        <h1 class="sh-mid">User Account</h1>
+    </div>
+
+    <div class="container">
+        <form action="">
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+            <p>Enter your Department of Public Works and Highways username.</p>
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <p>Enter the password that accompanies your username.</p>
+            <button class="sh-btnlogin">
+                <h3>Log in</h3>
+            </button>
+        </form>
+    </div>
+    <br>
+    <br><br>
+
+
+    <footer id="sh-footer">
+        <div class="sh-transparent">
+            <div class="sh-midnav sh-midnav-footer">
+                <div class="sh-header sh-header-footer">
+                    <div class="sh-img">
+                        <img src="logodp.png" alt="" class="sh-logo sh-logofooter">
+                    </div>
+                    <div class="sh-tittle sh-tittle-footer">
+                        <div class="sh-tit sh-tit-footer">
+                            <h4>REPUBLIC OF THE PHILIPPINES</h4>
+                        </div>
+                        <h3>DEPARTMENT OF PUBLIC WORKS AND HIGHWAYS</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="sh-last">
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh"><a href="">
+                                <h4>Home</h4>
+                            </a></li>
+                        <li id="sh"><a href="">
+                                <h4>Transparency</h4>
+                            </a></li>
+                        <li id="sh"><a href="">
+                                <h4>Project</h4>
+                            </a></li>
+                        <li id="sh"><a href="">
+                                <h4>Government Links</h4>
+                            </a></li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh"><a href="">
+                                <h4>Home</h4>
+                            </a></li>
+                        <li id="sh"><a href="">
+                                <h4>Transparency</h4>
+                            </a></li>
+                        <li id="sh"><a href="">
+                                <h4>Project</h4>
+                            </a></li>
+                        <li id="sh"><a href="">
+                                <h4>Government Links</h4>
+                            </a></li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh">
+                            <h4>Quicklinks</h4>
+                        </li>
+                        <li id="sh"><a href="">DPWH Devolution Transition Plan</a></li>
+                        <li id="sh"><a href="">Electronic Bid Submission Portal</a></li>
+                        <li id="sh"><a href="">DPWH Workspace</a></li>
+                        <li id="sh"><a href="">National Building Code Issuances and References</a></li>
+                        <li id="sh"><a href="">Computer Proficiency Examination Results</a></li>
+                        <li id="sh"><a href="">Freedom of Information</a></li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh">
+                            <h4>DPWH DIRECTORY</h4>
+                        </li>
+                        <li id="sh"><a href="">NCR</a></li>
+                        <li id="sh"><a href="">CAR</a></li>
+                        <li id="sh"><a href="">Region I</a></li>
+                        <li id="sh"><a href="">Region II</a></li>
+                        <li id="sh"><a href="">Region III</a></li>
+                        <li id="sh"><a href="">Region IV-A</a></li>
+                        <li id="sh"><a href="">Region IV-B</a></li>
+                        <li id="sh"><a href="">Region V</a></li>
+                        <li id="sh"><a href="">Region VI</a></li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh"><a href="">Region VII</a></li>
+                        <li id="sh"><a href="">Region VIII</a></li>
+                        <li id="sh"><a href="">Region IX</a></li>
+                        <li id="sh"><a href="">Region X</a></li>
+                        <li id="sh"><a href="">Region XI</a></li>
+                        <li id="sh"><a href="">Region XII</a></li>
+                        <li id="sh"><a href="">Region XIII</a></li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh">
+                            <h4>Contact Us:</h4>
+                        </li>
+                        <li id="sh" class="contact">Call:165-02</li>
+                        <li id="sh" class="contact">Cellphone/Viber:09616847084</li>
+                        <li id="sh" class="contact"><a href=""><img src="fb-removebg-preview.png" alt=""
+                                    class="sh-logo-con"></a></li>
+                        <li id="sh" class="contact"><a href=""><img src="download-removebg-preview.png" alt=""
+                                    class="sh-logo-con"></a></li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh" class="contact"><a href=""><img src="pts-removebg-preview.png" alt=""
+                                    class="logo"></a>
+                        </li>
+                        <li id="sh" class="contact"><a href=""><img src="fip-removebg-preview.png" alt=""
+                                    class="logo"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lastt sh-last">
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh">
+                            <h4>REPUBLIC OF THE PHILIPPINES</h4>
+                        </li>
+                        <li id="sh">All content is in the public domain</li>
+                        <li id="sh">unless otherwise stated.</li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh">
+                            <h4>ABOUT GOVPH</h4>
+                        </li>
+                        <li id="sh">Learn more about the Philippine government, its</li>
+                        <li id="sh">structure, how government works and the people</li>
+                        <li id="sh">behind it.</a></li>
+                        <li id="sh"><a href="">GOV.PH</a></li>
+                        <li id="sh"><a href="">Open Data Portal</a></li>
+                        <li id="sh"><a href="">Official Gazette</a></li>
+                    </ul>
+                </div>
+                <div id="sh-footer-content">
+                    <ul>
+                        <li id="sh">
+                            <h4>GOVERNMENT LINKS</h4>
+                        </li>
+                        <li id="sh"><a href="">Office of the President</a></li>
+                        <li id="sh"><a href="">Office of the Vice President</a></li>
+                        <li id="sh"><a href="">Senate of the Philippines</a></li>
+                        <li id="sh"><a href="">House of Representatives</a></li>
+                        <li id="sh"><a href="">Supreme Court</a></li>
+                        <li id="sh"><a href="">Court of Appeals</a></li>
+                        <li id="sh"><a href="">Sandiganbayan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
